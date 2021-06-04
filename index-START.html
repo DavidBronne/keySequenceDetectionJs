@@ -7,6 +7,15 @@
 </head>
 <body>
 <script>
+  const secretCode = 'eliot'
+  const typedKeys = []
+  function recordTypedKeys (e) {
+    typedKeys.push(e.key)
+    console.log(`typedKeys`, typedKeys)
+    typedKeys.splice(-secretCode.length -1, typedKeys.length - secretCode.length)
+    secretCode === typedKeys.join('') && console.log('Chouchoua');
+  }
+  window.addEventListener('keyup', recordTypedKeys)
 </script>
 </body>
 </html>
